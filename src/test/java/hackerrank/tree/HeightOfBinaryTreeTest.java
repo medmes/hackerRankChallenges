@@ -33,4 +33,20 @@ public class HeightOfBinaryTreeTest {
                 .isEqualTo(BINARY_TREE_HEIGHT);
 
     }
+
+    @Test
+    public void height_shouldReturnMinusOneBecauseTheRootIsInexistent() {
+        // the height of a Binary Tree is:
+        // the Max of left depth size and right depth size
+        //Given
+        Node root = null;
+
+        //When
+        int height = HeightOfBinaryTree.height(root);
+
+        //Then
+        assertThat(height)
+                .isEqualTo(-1);
+
+    }
 }
