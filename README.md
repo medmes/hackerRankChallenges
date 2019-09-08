@@ -1,2 +1,2 @@
-# my-algorithms-path
-Forcing my Algorithms and DataStructure skills!
+# HackerRankChallenges
+Some Solved HackerRank Challenges, the README file will be updated soon!
