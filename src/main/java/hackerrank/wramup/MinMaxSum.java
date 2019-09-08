@@ -12,7 +12,7 @@ public class MinMaxSum {
         int max = arr[0];
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < arr.length; i++) {
-            sum += new Long(arr[i]);
+            sum += Long.valueOf(arr[i]);
 
             if (min > arr[i]) {
                 min = arr[i];
@@ -23,9 +23,9 @@ public class MinMaxSum {
             }
         }
 
-        return stringBuilder.append(String.valueOf(new Long(sum - max)))
+        return stringBuilder.append(String.valueOf(sum - max))
                             .append(" ")
-                            .append(String.valueOf(new Long(sum - min)))
+                            .append(String.valueOf(sum - min))
                             .toString();
     }
 }
