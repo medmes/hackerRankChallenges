@@ -1,6 +1,7 @@
 package hackerrank.arrays;
 
 public class LeftRotation {
+    private LeftRotation() {}
 
     static int[] rotLeft(int[] a, int d) {
         for (int i = 0; i<d; i++) {
@@ -10,6 +11,7 @@ public class LeftRotation {
                 a[j] = a[j +1];
             }
             a[j] = temp;
+            System.out.println();
         }
         return a;
     }

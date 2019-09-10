@@ -4,7 +4,11 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertEquals;
 
 @RunWith(JUnit4.class)
 public class HeightOfBinaryTreeTest {
@@ -16,7 +20,7 @@ public class HeightOfBinaryTreeTest {
         // the height of a Binary Tree is:
         // the Max of left depth size and right depth size
         //Given
-        Node root = null;
+        BinaryTreeNode root = null;
         root = HeightOfBinaryTree.insert(root, 3);
         root = HeightOfBinaryTree.insert(root, 2);
         root = HeightOfBinaryTree.insert(root, 5);
@@ -39,7 +43,7 @@ public class HeightOfBinaryTreeTest {
         // the height of a Binary Tree is:
         // the Max of left depth size and right depth size
         //Given
-        Node root = null;
+        BinaryTreeNode root = null;
 
         //When
         int height = HeightOfBinaryTree.height(root);
