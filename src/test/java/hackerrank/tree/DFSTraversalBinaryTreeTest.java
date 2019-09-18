@@ -10,7 +10,7 @@ import java.io.PrintStream;
 import static org.junit.Assert.*;
 
 @RunWith(JUnit4.class)
-public class TraversalBinaryTreeTest {
+public class DFSTraversalBinaryTreeTest {
 
     @Test
     public void preOrderTraversal_shouldPrintBSTWithRootLeftRight() {
@@ -29,7 +29,7 @@ public class TraversalBinaryTreeTest {
         System.setOut(new PrintStream(out));
 
         //When
-        TraversalBinaryTree.preOrderTraversal(root);
+        DFSTraversalBinaryTree.preOrderTraversal(root);
 
         //Then
         assertEquals("3 2 1 5 4 6 7 ", out.toString());
@@ -54,7 +54,7 @@ public class TraversalBinaryTreeTest {
         System.setOut(new PrintStream(out));
 
         //When
-        TraversalBinaryTree.inOrderTraversal(root);
+        DFSTraversalBinaryTree.inOrderTraversal(root);
 
         //Then
         assertEquals("1 2 3 4 5 6 7 ", out.toString());
@@ -79,7 +79,7 @@ public class TraversalBinaryTreeTest {
         System.setOut(new PrintStream(out));
 
         //When
-        TraversalBinaryTree.postOrderTraversal(root);
+        DFSTraversalBinaryTree.postOrderTraversal(root);
 
         //Then
         assertEquals("1 2 4 7 6 5 3 ", out.toString());

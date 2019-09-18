@@ -1,7 +1,7 @@
 package hackerrank.tree;
 
-public class TraversalBinaryTree {
-    private TraversalBinaryTree() {
+public class DFSTraversalBinaryTree {
+    private DFSTraversalBinaryTree() {
     }
 
     /**
