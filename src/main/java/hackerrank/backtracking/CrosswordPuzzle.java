@@ -11,24 +11,36 @@ public class CrosswordPuzzle {
     private static final int[] C_OFFSETS = { 1, 0 };
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        //Sample:
+        String[] crossWords = new String[] {
+                "+-++++++++",
+                "+-++++++++",
+                "+-------++",
+                "+-++++++++",
+                "+-++++++++",
+                "+------+++",
+                "+-+++-++++",
+                "+++++-++++",
+                "+++++-++++",
+                "++++++++++"
+        };
+        String words = "AGRA;NORWAY;ENGLAND;GWALIOR";
 
-        char[][] grid = new char[SIZE][SIZE];
 
-        for (int i = 0; i < SIZE; i++) {
-            String line = sc.next();
-            for (int j = 0; j < SIZE; j++) {
-                grid[i][j] = line.charAt(j);
-            }
+        String[] solution = crosswordPuzzle(crossWords, words);
+
+        for (String line :
+                solution) {
+            System.out.println(line);
+
         }
-        String[] words = sc.next().split(";");
+    }
 
-        char[][] solution = solve(grid, words);
-
-        IntStream.range(0, SIZE)
-                .forEach(r -> System.out.println(solution[r]));
-
-        sc.close();
+    // Complete the crosswordPuzzle function below.
+    static String[] crosswordPuzzle(String[] crossword, String words) {
+        char[][] grid = WordsToCharGrid(crossword);
+        char[][] solution = solve(grid, words.split(";"));
+        return charGridToArrayWords(solution);
     }
 
     public static char[][] solve(char[][] grid, String[] words) {
@@ -108,6 +120,29 @@ public class CrosswordPuzzle {
 
             return grid[insertR][insertC] == '-' || grid[insertR][insertC] == word.charAt(insertOffset);
         });
+    }
+
+    static char[][] WordsToCharGrid(String[] crossword) {
+        char[][] grid = new char[SIZE][SIZE];
+        for (int i = 0; i < SIZE; i++) {
+
+            for (int j = 0; j < SIZE; j++) {
+                grid[i][j] = crossword[i].charAt(j);
+            }
+        }
+        return grid;
+    }
+
+    static String[] charGridToArrayWords(char[][] grid) {
+        StringBuilder stringBuilder = new StringBuilder();
+        String lineSeparator = System.lineSeparator(); // Based On where JVM is Running
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                stringBuilder.append(grid[i][j]);
+            }
+            stringBuilder.append(lineSeparator);
+        }
+        return stringBuilder.toString().split(lineSeparator);
     }
 
 }
